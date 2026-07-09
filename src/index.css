@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg-primary); color: var(--text-primary); transition: background-color 0.5s ease, color 0.4s ease; }
+
+.c-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastIn { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
+@keyframes floatWord { 0%,100% { transform: translate(0,0) rotate(0deg); } 33% { transform: translate(15px,-25px) rotate(3deg); } 66% { transform: translate(-10px,-40px) rotate(-2deg); } }
+@keyframes cursorBlink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
+@keyframes popIn { 0% { transform: scale(0.7); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes dotPulse { 0%,100% { transform: scale(0.6); opacity: 0.4; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes wiggle { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
+@keyframes glowBreathe { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+.animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+.cursor-blink { animation: cursorBlink 0.8s step-end infinite; }
+.animate-pop { animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+.animate-slide-right { animation: slideInRight 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-float { animation: floatY 3s ease-in-out infinite; }
+.animate-wiggle:hover { animation: wiggle 0.4s ease-in-out; }
+
+.ripple-span { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.3); transform: scale(0); animation: ripple 0.7s ease-out; pointer-events: none; }
+.grid-pattern { background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.08; }
+.btn-press { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.btn-press:active { transform: scale(0.94) !important; }
+.card-lift { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease; }
+.card-lift:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+.icon-hover-spin { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), color 0.2s ease; }
+.icon-hover-spin:hover { transform: rotate(15deg) scale(1.15); }
+.textarea-glow:focus { box-shadow: 0 0 0 3px var(--accent-dim), 0 0 30px var(--accent-dim); }
+.animated-gradient-text { background-size: 200% 200%; animation: shimmer 5s ease-in-out infinite; }
+.glass { background: color-mix(in srgb, var(--bg-tertiary) 80%, transparent); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); }
