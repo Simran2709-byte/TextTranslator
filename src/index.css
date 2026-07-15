@@ -3,6 +3,22 @@
 @theme {
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "DM Sans", sans-serif;
+  /* FALLBACK VALUES — these get overridden by ThemeProvider, but prevent blank page if JS fails */
+  --bg-primary: #0a0b10;
+  --bg-secondary: #0f0f14;
+  --bg-tertiary: #141419;
+  --bg-elevated: #1a1a22;
+  --border: #23232e;
+  --border-light: #2d2d3a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --accent-dim: rgba(249, 115, 22, 0.12);
+  --accent-glow: rgba(249, 115, 22, 0.3);
+  --gradient: linear-gradient(135deg, #f97316, #e11d48);
+  --gradient-text: linear-gradient(135deg, #fbbf24, #f97316, #e11d48);
 }
 
 ::-webkit-scrollbar { width: 5px; }
@@ -49,4 +65,3 @@ body { margin: 0; background: var(--bg-primary); color: var(--text-primary); tra
 .icon-hover-spin:hover { transform: rotate(15deg) scale(1.15); }
 .textarea-glow:focus { box-shadow: 0 0 0 3px var(--accent-dim), 0 0 30px var(--accent-dim); }
 .animated-gradient-text { background-size: 200% 200%; animation: shimmer 5s ease-in-out infinite; }
-.glass { background: color-mix(in srgb, var(--bg-tertiary) 80%, transparent); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); }
